@@ -27,7 +27,7 @@ Click on **NEW REQUEST** button to return to the converter homepage and send a n
 Click on **DOWNLOAD** button to download the result of the transformation, i.e. a compressed folder with the name
 _&lt;date&gt;&lt;time&gt;\_&lt;organization-name&gt;.zip_.
 
-The compressed folder includes the following files:
+The compressed folder (i.e. the output of the transformation) includes the following files:
 
 - ReadMe.txt: a text file with a brief description of the folder content;
 - CSWResponseOLD.xml: the CSW GetRecords response from the catalogue queried, based on the 2011 Italian profile / INSPIRE TG v.1.3;
