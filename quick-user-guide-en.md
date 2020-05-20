@@ -24,7 +24,7 @@ The page below appears:
 
 Click on **NEW REQUEST** button to return to the converter homepage and send a new request.
 
-Click on **DOWNLOAD** button to download the result of the transformation, i.e. a compressed folder with the name _<date><time>\_<organization-name>.zip_.
+Click on **DOWNLOAD** button to download the result of the transformation, i.e. a compressed folder with the name _&lt;date&gt;&lt;time&gt;\_&lt;organization-name&gt;.zip_.
 
 The compressed folder includes the following files:
 
