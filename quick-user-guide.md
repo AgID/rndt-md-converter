@@ -26,7 +26,7 @@ Cliccando su **SCARICA** viene richiesto di scaricare un file zip con nome
 
 _&lt;data&gt; &lt;ora&gt;\_&lt;nome amministrazione&gt;.zip_
 
-Il file zip contiene i seguenti files:
+Il file zip, che rappresenta l'output della trasformazione, contiene i seguenti files:
 
 - ReadMe.txt: un file di testo riassuntivo del contenuto dello zip;
 - CSWResponseOLD.xml: la risposta CSW del catalogo RNDT basata sui parametri della richiesta (amministrazione responsabile, numero record iniziale e numero record totali) secondo il profilo RNDT di cui al Decreto 2011;
