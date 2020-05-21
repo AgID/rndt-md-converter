@@ -14,8 +14,8 @@ I parametri utilizzati per le richieste sono i seguenti
 
 | **Parametro** | **Descrizione** | **Note**  |
 | ------------- |-------------| -----|
-| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile $defaultGetRequest nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
-| maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificando aggiornando la variabile $MaxRecords nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties).  |
+| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile ```$defaultGetRequest``` nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties). Dovrà, quindi, essere modificata anche l'etichetta nel form, definita nel file [```index.php```](https://github.com/AgID/rndt-md-converter/blob/master/index.php). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
+| maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificando aggiornando la variabile ```$MaxRecords``` nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties).  |
 | startPosition | Il numero del record da cui partire per l'interrogazione | Il valore deve essere un intero diverso da 0 |
 
 
