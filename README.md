@@ -9,14 +9,15 @@ Essa può essere utilizzata anche per la trasformazione dei metadati dalle [Line
 Lo script XSLT, inoltre, può essere adattato ad altri profili di metadati, come quelli, per esempio, di altri Stati Membri della UE.
 
 ## Specifiche
-Il RNDT metadata converter effettua richieste GetRecords (metodo GET) per interrogare il servizio CSW ed ottenere i record di metadati da trasformare attraverso lo script XSLT.
+Il _RNDT metadata converter_ effettua richieste GetRecords (metodo GET) per interrogare il servizio CSW ed ottenere i record di metadati da trasformare attraverso lo script XSLT.
 I parametri utilizzati per le richieste sono i seguenti
 
 | **Parametro** | **Descrizione** | **Note**  |
 | ------------- |-------------| -----|
-| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nel file config.properties. |
-| maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. |
-| startPosition | Il numero del record da cui partire per l'interrogazione |    Il valore deve essere un intero diverso da 0 |
+| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile $defaultGetRequest nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
+| maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificando aggiornando la variabile $MaxRecords nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties).  |
+| startPosition | Il numero del record da cui partire per l'interrogazione | Il valore deve essere un intero diverso da 0 |
+
 
 
 
