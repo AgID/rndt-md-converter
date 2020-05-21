@@ -43,6 +43,6 @@ In alternativa, si possono utilizzare altri script XSLT disponibili per la trasf
 
 Allo stesso modo, si possono utilizzare script XSLT definiti per profili di metadati di specifiche comunità, come quelli nazionali degli Stati Membri dell'UE. Alcuni esempi di XSLT sono disponibili nella [guida di GeoNetwork](https://geonetwork-opensource.org/manuals/trunk/en/user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0). 
 
-Si possono anche adattare i file XSLT disponibili nel repository a specifici profili di metadati.
+Infine, si possono anche adattare i file XSLT disponibili nel repository a specifici profili di metadati.
 
 In tutti i casi, è necessario che il file XSLT che si decide di utilizzare sia rinominato in "\_\_Transformation.xslt" e sia incollato nella cartella [```function/```](function).
