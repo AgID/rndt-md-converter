@@ -26,9 +26,9 @@ Utilizza le librerie EasyRDF e ML/JSON-LD di PHP che possono essere installate a
 Il repository include tutto ciò che è necessario per l'installazione e l'avvio del converter. Prima dell'avvio è necessario modificare le seguenti impostazioni:
 
 - nel file [```function/config.properties```](function/config.properties):
-  - inserire l'URL root del servizio CSW da interrogare attraverso la variabile ```$defaultSiteCSW```;
-  - inserire l'URL root del server dove è ospitato il servizio CSW attraverso la variabile ```$defaultSiteServerCSW```. Se si vuole interrogare un servizio CSW esterno, allora le due variabili di cui sopra assumono lo stesso URL;
-  - inserire il path dello script XSLT attraverso la variabile ```$FileXSLT```;
+  - inserire l'URL root del servizio CSW da interrogare nella variabile ```$defaultSiteCSW```;
+  - inserire l'URL root del server dove è ospitato il servizio CSW nella variabile ```$defaultSiteServerCSW```. Se si vuole interrogare un servizio CSW esterno, allora le due variabili di cui sopra assumono lo stesso URL;
+  - inserire il path dello script XSLT nella variabile ```$FileXSLT```;
   - è possibile modificare la richiesta CSW attraverso la variabile ```$defaultGetRequest```. Si può inserire una proprietà diversa (di default quella utilizzata è "apiso.OrganizationName") o un operatore diverso (di default quello utilizzato è "PropertyIsEqualTo"). In caso di modifica della proprietà, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente, inoltre, che tale modifica impatta anche sul nome del file zip, output della trasformazione. 
   
 - nel file [```function/function.php```](function/function.php):
