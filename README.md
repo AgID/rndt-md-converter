@@ -14,12 +14,21 @@ I parametri utilizzati per le richieste sono i seguenti
 
 | **Parametro** | **Descrizione** | **Note**  |
 | ------------- |-------------| -----|
-| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile ```$defaultGetRequest``` nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties). Dovrà, quindi, essere modificata anche l'etichetta nel form, definita nel file [```index.php```](https://github.com/AgID/rndt-md-converter/blob/master/index.php). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
-| maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificando aggiornando la variabile ```$MaxRecords``` nel file [```function/config.properties```](https://github.com/AgID/rndt-md-converter/blob/master/function/config.properties).  |
+| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile ```$defaultGetRequest``` nel file [```function/config.properties```](function/config.properties). In caso di modifica, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
+| maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificato aggiornando la variabile ```$MaxRecords``` nel file [```function/config.properties```](function/config.properties).  |
 | startPosition | Il numero del record da cui partire per l'interrogazione | Il valore deve essere un intero diverso da 0 |
 
-
-
-
 ## Istruzioni per l'installazione
-Istruzioni
+La soluzione è stata sviluppata in PHP 7.1 e gira su qualsiasi web server che ospita quella versione di PHP. Essa è stata testata su Linux, Windows and iOS.
+
+Utilizza le librerie EasyRDF e ML/JSON-LD di PHP che possono essere installate attraverso [Composer](https://getcomposer.org/), ma che sono comunque [già disponibili nel repository](lib/composer).
+
+Il repository include tutto ciò che è necessario per l'installazione e l'avvio del converter. Prima dell'avvio è necessario modificare le seguenti impostazioni:
+
+- nel file [```function/config.properties```](function/config.properties):
+  - inserire l'URL root del servizio CSW da interrogare attraverso la variabile ```$defaultSiteCSW```;
+  - inserire l'URL root del server dove è ospitato il servizio CSW attraverso la variabile ```$defaultSiteServerCSW```. Se si vuole interrogare un servizio CSW esterno, allora le due variabili di cui sopra assumono lo stesso URL;
+  - inserire il path dello script XSLT attraverso la variabile ```$FileXSLT```;
+  - è possibile modificare la richiesta CSW attraverso la variabile ```$defaultGetRequest```. Si può inserire una proprietà diversa (di default quella utilizzata è "apiso.OrganizationName") o un operatore diverso (di default quello utilizzato è "PropertyIsEqualTo"). In caso di modifica della proprietà, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente, inoltre, che tale modifica impatta anche sul nome del file zip, output della trasformazione. 
+- nel file [```function/function.php```](function/function.php):
+  - inserire l'URL del server dove è installato il converter attraverso la costante ```PATH_ROOT```.
