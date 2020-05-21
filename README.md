@@ -34,5 +34,15 @@ Il repository include tutto ciò che è necessario per l'installazione e l'avvio
 - nel file [```function/function.php```](function/function.php):
   - inserire l'URL del server dove è installato il converter attraverso la costante ```PATH_ROOT```.
   
-  ## Trasformazione INSPIRE
+Da prestare particolare attenzione alla cartella [```file/```](file), che è inizialmente vuota, a meno del file vuoto .gitkeep inserito per poterla aggiungere nel repository e che dopo l'installazione può essere cancellato. Tale cartella viene utilizzata per copiare le cartelle zip contenenti l'output della trasformazione. Per consentire ciò, è necessario che siano abilitati i permessi in scrittura su questa cartella per l'utente del web server.  
+  
+  ## Trasformazione rispetto ad INSPIRE e ad altri profili di metadati
   Se si vuole utilizzare il converter per la trasformazione dei metadati basata sulle Linee Guida INSPIRE (dalla v. 1.3 alla v. 2.0), senza considerare, quindi, le estensioni introdotte nel profilo nazionale italiano, si deve considerare lo script XSLT per INSPIRE copiandolo e incollandolo nella cartella [```function/```](function).
+  
+In alternativa, si possono utilizzare altri script XSLT disponibili per la trasformazione INSPIRE, come, per esempio, quello definito nell'ambito di [GeoNetwork](https://github.com/geonetwork/core-geonetwork/blob/master/schemas/iso19139/src/main/plugin/iso19139/process/inspire-tg13-to-tg20.xsl).  
+
+Allo stesso modo, si possono utilizzare script XSLT definiti per profili di metadati di specifiche comunità, come quelli nazionali degli Stati Membri dell'UE. Alcuni esempi di XSLT sono disponibili nella [guida di GeoNetwork](https://geonetwork-opensource.org/manuals/trunk/en/user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0). 
+
+Si possono anche adattare i file XSLT disponibili nel repository a specifici profili di metadati.
+
+In tutti i casi, è necessario che il file XSLT che si decide di utilizzare sia rinominato in "\_\_Transformation.xslt" e sia incollato nella cartella [```function/```](function).
