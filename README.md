@@ -33,3 +33,6 @@ Il repository include tutto ciò che è necessario per l'installazione e l'avvio
   
 - nel file [```function/function.php```](function/function.php):
   - inserire l'URL del server dove è installato il converter attraverso la costante ```PATH_ROOT```.
+  
+  ## Trasformazione INSPIRE
+  Se si vuole utilizzare il converter per la trasformazione dei metadati basata sulle Linee Guida INSPIRE (dalla v. 1.3 alla v. 2.0), quindi senza considerare le estensioni introdotte nel profilo nazionale italiano, si deve considerare lo script XSLT per INSPIRE copiandolo e incollandolo nella cartella [```function/```](function).
