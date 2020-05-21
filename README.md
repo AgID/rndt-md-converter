@@ -34,13 +34,18 @@ Il repository include tutto ciò che è necessario per l'installazione e l'avvio
 - nel file [```function/function.php```](function/function.php):
   - inserire l'URL del server dove è installato il converter attraverso la costante ```PATH_ROOT```.
   
-Da prestare particolare attenzione alla cartella [```file/```](file), che è inizialmente vuota, a meno del file vuoto .gitkeep inserito per poterla aggiungere nel repository e che dopo l'installazione può essere cancellato. Tale cartella viene utilizzata per copiare le cartelle zip contenenti l'output della trasformazione. Per consentire ciò, è necessario che siano abilitati i permessi in scrittura su questa cartella per l'utente del web server.  
+Da prestare particolare attenzione alla cartella [```file/```](file), che deve essere inizialmente vuota.  Per poterla aggiungere nel repository, è stato inserito in questa cartella il file vuoto .gitkeep che dopo l'installazione può essere cancellato. Tale cartella viene utilizzata per copiare le cartelle zip contenenti l'output della trasformazione. Per consentire ciò, è necessario che siano abilitati i permessi in scrittura su questa cartella per l'utente del web server.  
 
 ### Descrizione in inglese
 La descrizione che appare nella prima sezione presente nella pagina iniziale è in italiano. Per passare alla versione in inglese, nel file [```function/config.properties```](function/config.properties) commentare la descrizione in italiano e togliere i commenti dalla descrizione in inglese.  
   
 ## Trasformazione rispetto ad INSPIRE e ad altri profili di metadati
 Se si vuole utilizzare il converter per la trasformazione dei metadati sulla base delle Linee Guida INSPIRE (dalla v. 1.3 alla v. 2.0), senza considerare, quindi, le estensioni introdotte nel profilo nazionale italiano, si deve considerare lo script XSLT per INSPIRE copiandolo e incollandolo nella cartella [```function/```](function).
+
+Da tenere presente:
+- la trasformazione si riferisce solo a metadati in inglese;
+- nel caso di servizi diversi dai servizi di rete (cioè con serviceType='other'), si assume che il servizio sia un servizio di dati territoriali invocabile. Nel caso in cui non sia così, bisogna intervenire dopo la trasformazione per aggiungere i metadati mancanti;
+
   
 In alternativa, si possono utilizzare altri script XSLT disponibili per la trasformazione INSPIRE, come, per esempio, quello definito nell'ambito di [GeoNetwork](https://github.com/geonetwork/core-geonetwork/blob/master/schemas/iso19139/src/main/plugin/iso19139/process/inspire-tg13-to-tg20.xsl).  
 
