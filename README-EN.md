@@ -54,9 +54,9 @@ Be aware that:
 - if the services are not network services (i.e. serviceType='other'), it is assumed that the service is an invocable spatial data service. If that is not the case, further interventions will be needed to add the missing metadata elements;
 - in any case, manual checks could be needed.
   
-Other XSLT scripts available either for INSPIRE transformation (see, e.g., [GeoNetwork](https://github.com/geonetwork/core-geonetwork/blob/master/schemas/iso19139/src/main/plugin/iso19139/process/inspire-tg13-to-tg20.xsl)) or for specific national metadata profiles (see again [GeoNetwork](https://geonetwork-opensource.org/manuals/trunk/en/user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0)  may be used instead of that one provided in the repository.   
+Other XSLT scripts available for transformation either against INSPIRE TGs (see, e.g., [GeoNetwork](https://github.com/geonetwork/core-geonetwork/blob/master/schemas/iso19139/src/main/plugin/iso19139/process/inspire-tg13-to-tg20.xsl)) or against specific national metadata profiles (see the list of national scripts available on [GeoNetwork guide](https://geonetwork-opensource.org/manuals/trunk/en/user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0)) may be used instead of that one provided in the repository.   
 
-Finally, the XSLT script provided in the repository may be adapted to specific metadata profiles.
+Finally, the XSLT script provided in the repository may be adapted to other specific metadata profiles.
 
 In any case, the XSLT file is required to be renamed "\_\_Transformation.xslt" and pasted in the [```function/```](function) folder.
 
