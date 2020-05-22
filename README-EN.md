@@ -47,7 +47,7 @@ Pay special attention to the [```file/```](file) folder, that will be initially 
 The description shown at the top in the converter homepage is in Italian. To show the English version of this description,  comment the Italian description and uncomment the English one (```$Description``` variable in the file [```function/config.properties```](function/config.properties)).  
   
 ## Transformation against INSPIRE TGs or other metadata profiles
-If you want to use the converter for transforming metadata records against the INSPIRE Technical Guidelines (from v. 1.3 to v. 2.0), then without considering the Italian extensions, the [INSPIRE XSLT script](inspire-xslt) should be used copying and pasting it in the [```function/```](function) folder.
+If you want to use the converter for transforming metadata records against the INSPIRE Technical Guidelines (from v. 1.3 to v. 2.0), then without considering the Italian extensions, the [INSPIRE XSLT script](inspire-xslt) should be used by copying and pasting it in the [```function/```](function) folder.
 
 Be aware that:
 - the trasformation refers to metadata records using the English language;
