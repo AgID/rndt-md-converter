@@ -7,7 +7,7 @@
   https://joinup.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_it.pdf
  
  
-  Date: 20/05/2020
+  Date: 21/05/2020
   AgID - Agenzia per l'Italia Digitale (Agency for Digital Italy)
   - Created by ESRI Italy under the contract for the National Common Infrastructures -
   info@rndt.gov.it
