@@ -1,8 +1,6 @@
 # RNDT metadata converter
 
----
 ## [>> Italiano](README.md)
----
 
 _RNDT metadata converter_ is a reusable solution that allows to query an [OGC CSW (Catalog Service for the Web)](https://www.ogc.org/standards/cat) and transform the metadata records returned from the 2011 Italian metadata profile (aligned and extending the INSPIRE metadata TG v. 1.3) to 2020 Italian metadata profile (aligned and extending the INSPIRE metadata TG v. 2.0).
 
