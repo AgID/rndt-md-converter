@@ -2,7 +2,7 @@
 
 ## [>> Italiano](README.md)
 
-_RNDT metadata converter_ is a reusable solution that allows to query an [OGC CSW (Catalog Service for the Web)](https://www.ogc.org/standards/cat) and transform the metadata records returned, from a previous metadata profile to another one revised, as long as both based on ISO Standard TS 19139.
+_RNDT metadata converter_ is a reusable solution that allows to query an [OGC CSW (Catalog Service for the Web)](https://www.ogc.org/standards/cat) and transform the metadata records returned, from a former metadata profile to another one revised, as long as both based on ISO Standard TS 19139.
 
 In Italy, from the 2011 Italian metadata profile (aligned and extending the INSPIRE metadata TG v. 1.3) to 2020 Italian metadata profile (aligned and extending the INSPIRE metadata TG v. 2.0).
 
@@ -25,8 +25,8 @@ The parameters to be used for the requests are included in the table below:
 The transformation output is a compressed folder (zip) including the following files:
 
 - _ReadMe.txt_: a text file with a brief description of the folder content;
-- _CSWResponseOLD.xml_: he CSW GetRecords response from the catalogue queried, based on the 2011 Italian profile / INSPIRE TG v.1.3;
-- _CSWResponseNEW.xml_: the CSW GetRecords response from the catalogue queried, based on the 2020 Italian profile / INSPIRE TG v. 2.0 (i.e. the response CSWResponseOLD.xml transformed through the XSLT script);
+- _CSWResponseOLD.xml_: he CSW GetRecords response from the catalogue queried, based on the former metadata profile (such as 2011 Italian profile or  INSPIRE TG v.1.3);
+- _CSWResponseNEW.xml_: the CSW GetRecords response from the catalogue queried, based on the new metadata profile (such as 2020 Italian profile or INSPIRE TG v. 2.0), i.e. the response CSWResponseOLD.xml transformed through the XSLT script;
 - _MetadataRecords.zip_: a compressed folder that includes the individual metadata records transformed.
 
 ## Installation instructions
