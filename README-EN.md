@@ -35,8 +35,8 @@ The EasyRDF and the ML/JSON-LD PHP libraries are used and are [available in the 
 The repository includes all what is necessary for the installation and running of the converter. Before running it, update the following configuration information:
 
 - in the file [```function/config.properties```](function/config.properties):
-  - set the root URL of the CSW service to query in the ```$defaultSiteCSW``` variable;
-  - set the root URL to access the CSW server in the ```$defaultSiteServerCSW``` variable. If external, it can be the same root URL used for the $defaultSiteCSW variable;
+  - set the root URL of the CSW service to query in the ```$defaultSiteCSW``` variable. This URL must be accessible directly from the calling client;
+  - set the root URL to access the CSW server in the ```$defaultSiteServerCSW``` variable. This URL must be accessible from the Web server application (i.e. the PHP function); thus  if public, it can be the same URL used for the $defaultSiteCSW variable;
   - set the path of the XSLT script (included in the same folder) in the ```$FileXSLT``` variable;
   - the CSW GetRecords request in the ```$defaultGetRequest``` variable may (but not necessarily required) be customised modifying the queryable (in the default request "apiso.OrganizationName") and/or the comparison operator (in the default request "PropertyIsEqualTo"). In such a case, the corresponding label in the form (defined in the file [```index.php```](index.php)) shall be updated consequently. Be careful that the update of this parameter will affect the name of the compressed (zip) folder, that is the transformation output. 
   
