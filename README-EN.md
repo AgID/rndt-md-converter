@@ -66,4 +66,4 @@ In any case, the XSLT file is required to be renamed "\_\_Transformation.xslt" a
 The licence applied is [European Union Public License v. 1.2](LICENSE).
 
 ## Credits
-The solution is developed by ESRI Italia under the contract for the SPC National Common Infrastructures.
+The solution is developed by ESRI Italia for [AgID](https://www.agid.gov.it/) under the contract for the SPC National Common Infrastructures.
