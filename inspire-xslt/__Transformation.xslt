@@ -8,7 +8,7 @@
  
   Date: 21/05/2020
   AgID - Agenzia per l'Italia Digitale (Agency for Digital Italy)
-  ESRI Italy under the contract of National Common Infrastructures
+  - Created by ESRI Italy under the contract of SPCNational Common Infrastructures - 
   info@rndt.gov.it
 
 */ 
