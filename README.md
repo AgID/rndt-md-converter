@@ -18,6 +18,13 @@ I parametri utilizzati per le richieste sono i seguenti
 | maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificato aggiornando la variabile ```$MaxRecords``` nel file [```function/config.properties```](function/config.properties).  |
 | startPosition | Il numero del record da cui partire per l'interrogazione | Il valore deve essere un intero diverso da 0 |
 
+L'output della trasformazione è una cartella compressa (zip) che contiene i seguenti files:
+
+- _ReadMe.txt_: un file di testo riassuntivo del contenuto dello zip;
+- _CSWResponseOLD.xml_: la risposta CSW basata sui parametri della richiesta (amministrazione responsabile, numero record iniziale e numero record totali) secondo il profilo RNDT di cui al Decreto 2011 / INSPIRE TG v.1.3;
+- _CSWResponseNEW.xml_: la risposta CSW basata sul nuovo profilo (ovvero la risposta CSW CSWResponseOLD.xml trasformata attraverso lo script XSLT);
+- _MetadataRecords.zip_: un file zip che contiene i singoli record trasformati e salvati separatamente. I record sono identificati con un numero progressivo.
+
 ## Istruzioni per l'installazione
 La soluzione è stata sviluppata in PHP 7.1 e gira su qualsiasi web server che ospita quella versione di PHP. Essa è stata testata su Linux, Windows and iOS.
 
