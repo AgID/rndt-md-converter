@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vcinopri
- * Date: 21/10/2019
- * Time: 15:23
- */
-
 
 header('Content-Type: application/json');
 
