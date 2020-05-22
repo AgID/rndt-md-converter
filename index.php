@@ -22,9 +22,9 @@
     </section>
 <?php endif;?>
 
-<!-- Comment from <section> to </section> to use the English labels in the form -->
+<!-- Uncomment from <section> to </section> to use the Italian labels in the form -->
 
-<section id="input-box" class="p25">
+<!--<section id="input-box" class="p25">
     <h2 class="bottom20">
         Inserire la richiesta:
     </h2>
@@ -57,11 +57,11 @@
             <div class="backNewRequest">Nuova richiesta</div>
         </div>
     </div>
-</section>
+</section>-->
 
-<!-- Uncomment from <section> to </section> to use the English labels in the form -->
+<!-- Comment from <section> to </section> to use the Italian labels in the form -->
             
-            <!--<section id="input-box" class="p25">
+            <section id="input-box" class="p25">
                 <h2 class="bottom20">
                     Enter the request:
                 </h2>
@@ -94,7 +94,7 @@
                         <div class="backNewRequest">New request</div>
                     </div>
                 </div>
-            </section>-->
+            </section>
 
 <div class="footer" class="top50">
     <footer>RNDT metadata converter  - GitHub: <a target='_blank' href="https://github.com/AgID/rndt-md-converter">https://github.com/AgID/rndt-md-converter</a></footer>
