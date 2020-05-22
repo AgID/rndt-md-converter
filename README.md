@@ -28,7 +28,7 @@ L'output della trasformazione è una cartella compressa (zip) che contiene i seg
 ## Istruzioni per l'installazione
 La soluzione è stata sviluppata in PHP 7.1 e gira su qualsiasi web server che ospita quella versione di PHP. Essa è stata testata su Linux, Windows and iOS.
 
-Utilizza le librerie EasyRDF e ML/JSON-LD di PHP che possono essere installate attraverso [Composer](https://getcomposer.org/), ma che sono comunque [già disponibili nel repository](lib/composer).
+Utilizza le librerie EasyRDF e ML/JSON-LD di PHP che sono [già disponibili nel repository](lib/composer).
 
 Il repository include tutto ciò che è necessario per l'installazione e l'avvio del converter. Prima dell'avvio è necessario modificare le seguenti impostazioni:
 
@@ -61,3 +61,9 @@ Allo stesso modo, si possono utilizzare script XSLT definiti per profili di meta
 Infine, si possono anche adattare i file XSLT disponibili nel repository a specifici profili di metadati.
 
 In tutti i casi, è necessario che il file XSLT che si decide di utilizzare sia rinominato in "\_\_Transformation.xslt" e sia incollato nella cartella [```function/```](function).
+
+## Licenza
+La licenza applicata è [European Union Public License v. 1.2](LICENSE).
+
+## Credits
+La soluzione è stata sviluppata da ESRI Italia nell'ambito della gara per le Infrastrutture Nazionali Condivise SPC.
