@@ -51,14 +51,14 @@ Pay special attention to the [```file/```](file) folder, that will be initially 
 The description shown at the top in the converter homepage is in Italian. To show the English version of this description,  comment the Italian description and uncomment the English one in the ```$Description``` variable in the file [```function/config.properties```](function/config.properties). In a future release a wider use of label constants will be adopted.  
   
 ## Transformation against INSPIRE TGs or other metadata profiles
-If you want to use the converter for transforming metadata records against the INSPIRE Technical Guidelines (from v. 1.3 to v. 2.0), then without considering the Italian extensions, the [INSPIRE XSLT script](inspire-xslt) should be used by copying and pasting it in the [```function/```](function) folder.
+If you want to use the converter for transforming metadata records against the INSPIRE Technical Guidelines (from v. 1.3 to v. 2.0), i.e. without considering the Italian extensions, the [INSPIRE XSLT script](inspire-xslt) should be used by copying and pasting it in the [```function/```](function) folder.
 
 Be aware that:
 - the trasformation refers to metadata records using the English language;
 - if the services are not network services (i.e. serviceType='other'), it is assumed that the service is an invocable spatial data service. If that is not the case, further interventions will be needed to add the missing metadata elements;
 - in any case, manual checks could be needed.
   
-Other XSLT scripts available for transformation either against INSPIRE TGs (see, e.g., [GeoNetwork](https://github.com/geonetwork/core-geonetwork/blob/master/schemas/iso19139/src/main/plugin/iso19139/process/inspire-tg13-to-tg20.xsl)) or against specific national metadata profiles (see the list of national scripts available on [GeoNetwork guide](https://geonetwork-opensource.org/manuals/trunk/en/user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0)) may be used instead of that one provided in the repository.   
+Other XSLT scripts available for transformation either against INSPIRE TGs (see, e.g., [GeoNetwork](https://github.com/geonetwork/core-geonetwork/blob/master/schemas/iso19139/src/main/plugin/iso19139/process/inspire-tg13-to-tg20.xsl)) or against specific national metadata profiles (see, e.g., the list of some national scripts available on [GeoNetwork guide](https://geonetwork-opensource.org/manuals/trunk/en/user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0)) may be used instead of that one provided in the repository.   
 
 Finally, the XSLT script provided in the repository may be adapted to other specific metadata profiles.
 
