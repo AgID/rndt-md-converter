@@ -21,7 +21,7 @@ I parametri utilizzati per le richieste sono i seguenti
 
 | **Parametro** | **Descrizione** | **Note**  |
 | ------------- |-------------| -----|
-| organizationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile ```$defaultGetRequest``` nel file [```function/config.properties```](function/config.properties). In caso di modifica, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
+| organisationName | Nome dell'organizzazione (pubblica amministrazione) titolare di dati e servizi di cui si vogliono estrarre i metadati | Questo parametro può essere cambiato, modificando la richiesta CSW nella variabile ```$defaultGetRequest``` nel file [```function/config.properties```](function/config.properties). In caso di modifica, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente che l'eventuale modifica del parametro impatta anche sul nome del file zip, output della trasformazione. |
 | maxRecords | Numero massimo di record che si vogliono trasformare | Il valore massimo che è possibile impostare è 100. Questo valore può essere modificato aggiornando la variabile ```$MaxRecords``` nel file [```function/config.properties```](function/config.properties).  |
 | startPosition | Il numero del record da cui partire per l'interrogazione | Il valore deve essere un intero diverso da 0 |
 
@@ -43,7 +43,7 @@ Il repository include tutto ciò che è necessario per l'installazione e l'avvio
   - inserire l'URL root del servizio CSW da interrogare nella variabile ```$defaultSiteCSW```;
   - inserire l'URL root del server dove è ospitato il servizio CSW nella variabile ```$defaultSiteServerCSW```. Se si vuole interrogare un servizio CSW esterno, allora le due variabili di cui sopra assumono lo stesso URL;
   - inserire il path dello script XSLT nella variabile ```$FileXSLT```;
-  - è possibile modificare la richiesta CSW attraverso la variabile ```$defaultGetRequest```. Si può inserire una proprietà diversa (di default quella utilizzata è "apiso.OrganizationName") o un operatore diverso (di default quello utilizzato è "PropertyIsEqualTo"). In caso di modifica della proprietà, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente, inoltre, che tale modifica impatta anche sul nome del file zip, output della trasformazione. 
+  - è possibile modificare la richiesta CSW attraverso la variabile ```$defaultGetRequest```. Si può inserire una proprietà diversa (di default quella utilizzata è "apiso.OrganisationName") o un operatore diverso (di default quello utilizzato è "PropertyIsEqualTo"). In caso di modifica della proprietà, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente, inoltre, che tale modifica impatta anche sul nome del file zip, output della trasformazione. 
   
 - nel file [```function/function.php```](function/function.php):
   - inserire l'URL del server dove è installato il converter attraverso la costante ```PATH_ROOT```.
