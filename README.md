@@ -8,7 +8,7 @@ Essa può essere utilizzata anche per la trasformazione dei metadati dalle [Line
 
 Lo script XSLT, inoltre, può essere adattato ad altri profili di metadati, come quelli, per esempio, di altri Stati Membri della UE.
 
-Per ulteriori informazioni sull'uso del converter, fare riferimento alla [**guida rapida per l'utente**](wiki/Guida-rapida-per-l'utente).
+Per ulteriori informazioni sull'uso del converter, fare riferimento alla [**guida rapida per l'utente**](https://github.com/AgID/rndt-md-converter/wiki/Guida-rapida-per-l'utente).
 
 Una installazione della soluzione è disponibile sul [**portale RNDT**](https://geodati.gov.it/rndt-md-converter/).
 
