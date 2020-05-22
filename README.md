@@ -8,6 +8,10 @@ Essa può essere utilizzata anche per la trasformazione dei metadati dalle [Line
 
 Lo script XSLT, inoltre, può essere adattato ad altri profili di metadati, come quelli, per esempio, di altri Stati Membri della UE.
 
+Per ulteriori informazioni sull'uso del converter, fare riferimento alla [**guida rapida per l'utente**](wiki/Guida-rapida-per-l'utente).
+
+Una installazione della soluzione è disponibile sul [**portale RNDT**](https://geodati.gov.it/rndt-md-converter/).
+
 ## Specifiche
 Il _RNDT metadata converter_ effettua richieste GetRecords (metodo GET) per interrogare il servizio CSW ed ottenere i record di metadati da trasformare attraverso lo script XSLT.
 I parametri utilizzati per le richieste sono i seguenti
