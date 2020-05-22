@@ -16,7 +16,7 @@ The parameters to be used for the requests are included in the table below:
 
 | **Parameter** | **Description** | **Notes**  |
 | ------------- |-------------| -----|
-| organizationName | The name of the organization (i.e. public administration) provider of metadata records to be transformed. | This parameter can be changed, updating the GetRecords request value in the ```$defaultGetRequest``` variable in the file [```function/config.properties```](function/config.properties). In such a case, the corresponding label in the form (defined in the file [```index.php```](index.php)) shall be updated consequently. Be careful that the update of this parameter will affect the name of the compressed (zip) folder, that is the transformation output. |
+| organisationName | The name of the organisation (i.e. public administration) provider of metadata records to be transformed. | This parameter can be changed, updating the GetRecords request value in the ```$defaultGetRequest``` variable in the file [```function/config.properties```](function/config.properties). In such a case, the corresponding label in the form (defined in the file [```index.php```](index.php)) shall be updated consequently. Be careful that the update of this parameter will affect the name of the compressed (zip) folder, that is the transformation output. |
 | maxRecords | number of records that should be returned from the result set of the query and transformed.  | The maximum number is set to 100, but it can be updated in the ```$MaxRecords``` variable in the file [```function/config.properties```](function/config.properties). Value must be a positive integer.  |
 | startPosition | The first record to start querying. | Value must be a non-zero positive integer. |
 
