@@ -1,6 +1,6 @@
 # RNDT metadata converter
 
-[**English**](README-EN.md)
+## [English](README-EN.md)
 
 La soluzione consente di interrogare un servizio [CSW (Catalogue Service for the Web basato sullo standard OGC)](https://www.ogc.org/standards/cat) ed estrarre i metadati di dati e servizi territoriali trasformati dal profilo definito con il Decreto 10/11/2011 (e relative guide operative, coerenti con le linee guida INSPIRE v. 1.3) al nuovo profilo RNDT 2.0 (v. la [guida operativa](https://geodati.gov.it/geoportale/images/struttura/documenti/Manuale-RNDT_2-guida-operativa-compilazione-metadati_v3.0.pdf), coerente con le linee guida INSPIRE v. 2.0.1).
 
@@ -72,4 +72,4 @@ In tutti i casi, è necessario che il file XSLT che si decide di utilizzare sia 
 La licenza applicata è [European Union Public License v. 1.2](LICENSE).
 
 ## Credits
-La soluzione è stata sviluppata da ESRI Italia nell'ambito della gara per le Infrastrutture Nazionali Condivise SPC.
+La soluzione è stata sviluppata da ESRI Italia per [AgID](https://www.agid.gov.it/) nell'ambito della gara per le **Infrastrutture Nazionali Condivise SPC**.
