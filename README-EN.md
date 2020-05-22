@@ -43,10 +43,10 @@ The repository includes all what is necessary for the installation and running o
 - in the file [```function/function.php```](function/function.php):
   - set the URL of the server where the converter is installed as value of the constant ```PATH_ROOT```.
   
-Pay special attention to the [```file/```](file) folder, that will be initially empty. To add the folder in the repository, the empty file .gitkeep was included in the forder; that file may be removed after the installation. This folder is used to download the compressed folders of the transformation output. Be sure that everything inside this folder has the right read/write/execute permissions.  
+Pay special attention to the [```file/```](file) folder, that will be initially empty. To add the folder in the repository, the empty file .gitkeep was included in the folder; that file may be removed after the installation. This folder will hold the subfolders containing the results of the query. Be sure that everything inside this folder has the right read/write/execute permissions.  
 
 ### English description
-The description shown at the top in the converter homepage is in Italian. To show the English version of this description,  comment the Italian description and uncomment the English one (```$Description``` variable in the file [```function/config.properties```](function/config.properties)).  
+The description shown at the top in the converter homepage is in Italian. To show the English version of this description,  comment the Italian description and uncomment the English one (```$Description``` variable in the file [```function/config.properties```](function/config.properties)). In a future release a wider use of label constants will be adopted.  
   
 ## Transformation against INSPIRE TGs or other metadata profiles
 If you want to use the converter for transforming metadata records against the INSPIRE Technical Guidelines (from v. 1.3 to v. 2.0), then without considering the Italian extensions, the [INSPIRE XSLT script](inspire-xslt) should be used by copying and pasting it in the [```function/```](function) folder.
