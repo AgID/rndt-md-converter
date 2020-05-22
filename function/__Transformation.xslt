@@ -92,7 +92,6 @@
    
     <!-- Aggiunta del namespace gmx e aggiunta dello schema se non esisteva  -->
 	<xsl:template name="Namespaces" match="gmd:MD_Metadata">
-		<xsl:comment>Aggiunta del namespace gmx e sostituzione dello schema</xsl:comment>
 		<xsl:copy>
 			<xsl:namespace name="gmx" select="'http://www.isotc211.org/2005/gmx'"/>
 			<xsl:choose>
@@ -341,7 +340,6 @@
    </xsl:template>
    <!-- Resource constraints -->
    <xsl:template match="//gmd:resourceConstraints[gmd:MD_Constraints/gmd:useLimitation]">
-      <xsl:comment>La sezione useLimitation è stata sostituita da una equivalente sezione di resourceConstraints. Controllare le linee guida per una corretta compilazione.</xsl:comment>
       <xsl:variable name="otherConstraints">
          <xsl:value-of select="//gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints/gco:CharacterString" />
       </xsl:variable>
@@ -369,7 +367,6 @@
       </gmd:resourceConstraints>
    </xsl:template>
    <xsl:template match="//gmd:resourceConstraints[gmd:MD_LegalConstraints]">
-      <xsl:comment>Le sezioni di resourceConstraints sono state sostituite da una parte fissa e una (useConstraints) inserita come esempio. Controllare le linee guida per una corretta compilazione.</xsl:comment>
    </xsl:template>
    <xsl:template match="//gmd:resourceConstraints[gmd:MD_SecurityConstraints]">
       <xsl:comment>La sezione MD_SecurityConstraints è divenuta opzionale.</xsl:comment>
@@ -568,17 +565,12 @@
    <!--  Risorsa online -->
    <xsl:template match="//gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource">
       <gmd:CI_OnlineResource>
-         <!-- Se è un servizio non di rete ci sono due tag -->
          <xsl:variable name="hierarchyLevel_loc" select="../../../../../../gmd:hierarchyLevel/gmd:MD_ScopeCode/@codeListValue"/>
          <xsl:if test="$hierarchyLevel_loc= 'service'">
-            <!-- se serviceType = other allora function è information di default -->
-            <!--<xsl:apply-templates select="@* | node()" />-->
             <gmd:linkage>
                         <gmd:URL><xsl:value-of select="gmd:linkage/gmd:URL"/></gmd:URL>
                      </gmd:linkage>
-            <!--<xsl:if test="$serviceType = 'other'">-->
             <xsl:if test="translate(../../../../../../gmd:identificationInfo/srv:SV_ServiceIdentification/srv:serviceType/gco:LocalName, $uppercase, $lowercase) = 'other'">
-               <xsl:comment>Per i servizi non di rete sono pevisti i tag descrizione e funzione</xsl:comment>
                <gmd:description>
                   <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/OnLineDescriptionCode/accessPoint">accessPoint</gmx:Anchor>
                </gmd:description>
@@ -587,9 +579,7 @@
                </gmd:function>
             </xsl:if>
          </xsl:if>
-         <!-- Se non è servizio allora ci sono più tag da aggiugere -->
          <xsl:if test="$hierarchyLevel_loc != 'service'">
-            <!--<xsl:comment>Per i dataset sono previsti i seguenti tag aggiuntivi: Protocollo, Profilo applicativo e Descrizione</xsl:comment>-->
             <xsl:variable name="protocol" select="translate(gmd:protocol/*/text(), $lowercase, $uppercase)" />
             <xsl:variable name="url" select="translate(gmd:linkage/gmd:URL/text(), $lowercase, $uppercase)" />
             <xsl:variable name="protocolFound">
@@ -654,13 +644,11 @@
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:variable>
-            <!--<xsl:variable name="linkProtocol" select="concat('http://inspire.ec.europa.eu/metadata-codelist/Protocol/', $protocolFound)" />-->
             <gmd:linkage>
                <gmd:URL>
                   <xsl:value-of select="gmd:linkage/gmd:URL" />
                </gmd:URL>
             </gmd:linkage>
-            <xsl:comment>Per i dataset sono previsti i seguenti tag aggiuntivi: Protocollo, Profilo applicativo e Descrizione</xsl:comment>
             <gmd:protocol>
                <gmx:Anchor xlink:href="{$linkProtocol}">
                   <xsl:value-of select="$protocolFound" />
@@ -694,14 +682,12 @@
                </xsl:choose>
             </xsl:variable>
             <xsl:variable name="linkApplicationProfile" select="concat('http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/', $applicationProfileFound)" />
-            <xsl:comment>Si deve inserire il tag che identifica il profilo applicativo</xsl:comment>
             <gmd:applicationProfile>
                <gmx:Anchor xlink:href="{$linkApplicationProfile}">
                   <xsl:value-of select="$applicationProfileFound" />
                </gmx:Anchor>
             </gmd:applicationProfile>
             <!-- Description -->
-            <xsl:comment>Nuovo metadato - Descrizione della risorsa online. Il valore da inserire è accessPoint</xsl:comment>
             <gmd:description>
                <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/OnLineDescriptionCode/accessPoint">accessPoint</gmx:Anchor>
             </gmd:description>
@@ -714,9 +700,7 @@
       <xsl:copy>
          <xsl:apply-templates select="@* | node()"/>
       </xsl:copy>
-      <!-- Se il livello è servizio c'è anche la descrizione -->
       <xsl:if test="$hierarchyLevel = 'servizio'">
-         <xsl:comment>Per i servizi va documentato il tag "descrizione" del livello di qualita'</xsl:comment>
                <gmd:levelDescription>
                   <gmd:MD_ScopeDescription>
                      <gmd:other>
@@ -732,8 +716,6 @@
      <xsl:copy>
          <xsl:apply-templates select="@* | node()" />
       </xsl:copy>
-   	  <!-- Va comunque indicata l'aderenza alla normativa -->
-		 <xsl:comment>Viene specificata l'aderenza alle normative INSPIRE</xsl:comment>
 		<gmd:report>
 			<gmd:DQ_DomainConsistency>
 			   <gmd:result>
@@ -764,9 +746,8 @@
 			</gmd:DQ_DomainConsistency>
 		</gmd:report>	  
 
-      <!-- Se è un servizio ed è 'other' si assume che sia 'invocable' -->
+      <!-- Se è un servizio e serviceType='other' si assume che sia 'invocable' -->
       <xsl:if test="$hierarchyLevel = 'servizio' and $serviceType = 'other'">
-         <xsl:comment>Nuovo elemento "Categoria" presente solo se il servizio è invocabile (quindi qualunque servizio non di rete)</xsl:comment>
          <gmd:report>
             <gmd:DQ_DomainConsistency>
                <gmd:result>
@@ -799,12 +780,9 @@
             </gmd:DQ_DomainConsistency>
          </gmd:report>
       </xsl:if>
-
-  
    </xsl:template>
    <!-- Keywords for services -->
    <xsl:template match="//srv:SV_ServiceIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString">
-      <xsl:comment>Le parole chiave INSPIRE devono essere espresse in linguaggio neutrale e tramite link gmx:Anchor</xsl:comment>
       <xsl:choose>
          <xsl:when test="text() = 'Servizi geografici con interazione umana' or text() = 'humanInteractionService'">
             <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/humanInteractionService">
