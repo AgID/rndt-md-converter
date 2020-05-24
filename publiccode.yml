@@ -86,7 +86,7 @@ localisation:
   localisationReady: true
 maintenance:
   contractors:
-    - name: RTI Fastweb - Leonardo - SIA
+    - name: RTI Fastweb - Leonardo - SIA (sub-contractor ESRI Italia)
       until: '2021-08-04'
   type: contract
 name: RNDT metadata converter
