@@ -1,0 +1,105 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+applicationSuite: RNDT
+categories:
+  - cad
+  - geographic-information-systems
+description:
+  it:
+    documentation: 'https://github.com/AgID/rndt-md-converter/wiki'
+    features:
+      - >-
+        Trasforma i metadati di dati e servizi territoriali verso il nuovo
+        profilo nazionale ed europeo
+    genericName: Tool per trasformazione metadati
+    longDescription: >
+      **RNDT metadata converter** consente di interrogare un servizio [CSW
+      (Catalogue Service for the Web basato sullo standard
+      OGC)](https://www.ogc.org/standards/cat) ed estrarre i metadati di dati e
+      servizi territoriali trasformati da un profilo di metadati ad un altro,
+      purchè basati entrambi sullo Standard ISO TS 19139.
+
+
+      In Italia, dal profilo definito con il Decreto 10/11/2011 (e relative
+      guide operative, coerenti con le linee guida INSPIRE v. 1.3) al nuovo
+      profilo RNDT 2.0 (v. la [guida
+      operativa](https://geodati.gov.it/geoportale/images/struttura/documenti/Manuale-RNDT_2-guida-operativa-compilazione-metadati_v3.0.pdf),
+      coerente con le linee guida INSPIRE v. 2.0.1).
+
+
+      Essa rappresenta uno strumento utile per supportare le amministrazioni
+      pubbliche nell’adeguamento agli ultimi aggiornamenti dello standard
+      relativo ai metadati per i dati territoriali e relativi servizi, coerente con la versione 2.0 delle linee guida INSPIRE, il framework europeo di interoperabilità per i dati territoriali.
+
+
+      Essa può essere utilizzata anche per la trasformazione dei metadati dalle
+      [Linee Guida INSPIRE v.
+      1.3](https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1)
+      alle [Linee Guida INSPIRE
+      v.2.0](https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139),
+      utilizzando il relativo script XSLT.
+
+
+      Lo script XSLT, inoltre, può essere adattato ad altri profili di metadati,
+      come quelli, per esempio, di altri Stati Membri della UE.
+
+
+      Per ulteriori informazioni sull'uso del converter, fare riferimento alla
+      [**guida rapida per
+      l'utente**](https://github.com/AgID/rndt-md-converter/wiki/Guida-rapida-per-l'utente).
+
+
+      Una installazione della soluzione è disponibile sul [**portale
+      RNDT**](https://geodati.gov.it/rndt-md-converter/).
+    screenshots:
+      - >-
+        https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/converter-homepage.png
+    shortDescription: >-
+      Tool per la trasformazione dei metadati di dati e servizi territoriali da
+      un profilo ad un altro, basati entrambi sullo Standard ISO TS 19139.
+developmentStatus: stable
+it:
+  conforme:
+    gdpr: false
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: false
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: agid
+legal:
+  license: EUPL-1.2
+  mainCopyrightOwner: Agenzia per l'Italia Digitale
+  repoOwner: Agenzia per l'Italia Digitale
+localisation:
+  availableLanguages:
+    - it
+    - en
+  localisationReady: true
+maintenance:
+  contractors:
+    - name: RTI Fastweb - Leonardo - SIA
+      until: '2021-08-04'
+  type: contract
+name: RNDT metadata converter
+platforms:
+  - windows
+  - linux
+  - ios
+  - mac
+releaseDate: '2020-05-21'
+softwareType: standalone/web
+softwareVersion: '1.0'
+url: 'https://github.com/AgID/rndt-md-converter'
+inputTypes:
+  - text/xml
+outputTypes:
+  - text/xml
