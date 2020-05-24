@@ -67,7 +67,7 @@
                 </h2>
                 <form id="api" action="transformation.php" method="get">
                     <div style="">
-                        <label class="labelCustom" for="parametervalue">Organization name: </label>
+                        <label class="labelCustom" for="parametervalue">Organisation name: </label>
                         <input id="parametervalue" type="text" name="parametervalue" required>
                         <div class="results_PA" style="display: none;"></div>
                     </div>
