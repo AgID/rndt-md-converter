@@ -52,6 +52,8 @@ Il repository include tutto ciò che è necessario per l'installazione e l'avvio
   
 Da prestare particolare attenzione alla cartella [```file/```](file), che deve essere inizialmente vuota.  Per poterla aggiungere nel repository, è stato inserito in questa cartella il file vuoto .gitkeep che dopo l'installazione può essere cancellato. Tale cartella viene utilizzata per copiare le cartelle zip contenenti l'output della trasformazione. Per consentire ciò, è necessario che siano abilitati i permessi in scrittura su questa cartella per l'utente del web server.  
 
+**NOTA** - Il file [publiccode.yml](publiccode.yml) è un file di metadati richiesto per il software della pubblica amministrazione italiana. Esso è stato inserito per consentire al crawler automatico di Developers Italia di raccogliere tutte le informazioni utili al popolamento del [catalogo del software open source](https://developers.italia.it/it/software/).
+
 ### Descrizione in inglese
 La descrizione che appare nella prima sezione presente nella pagina iniziale è in italiano. Per passare alla versione in inglese, nel file [```function/config.properties```](function/config.properties) commentare la descrizione in italiano e togliere i commenti dalla descrizione in inglese.  
   
