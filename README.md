@@ -43,7 +43,6 @@ Il repository include tutto ciò che è necessario per l'installazione e l'avvio
 
 - nel file [```function/config.properties```](function/config.properties):
   - inserire l'URL root del servizio CSW da interrogare nella variabile ```$defaultSiteCSW```. Tale URL deve essere direttamente accessibile dal client che effettua la richiesta;
-set the root URL to access the CSW server in the $defaultSiteServerCSW variable. This URL must be accessible from the Web server application (i.e. the PHP function); thus if public, it can be the same URL used for the $defaultSiteCSW variable;
   - inserire l'URL root del server dove è ospitato il servizio CSW nella variabile ```$defaultSiteServerCSW```. Tale URL deve essere accessibile dall'applicazione del web server (PHP); quindi, se pubblico, può coincidere con l'URL utilizzato per la variabile $defaultSiteCSW;
   - inserire il path dello script XSLT nella variabile ```$FileXSLT```;
   - è possibile modificare la richiesta CSW attraverso la variabile ```$defaultGetRequest```. Si può inserire una proprietà diversa (di default quella utilizzata è "apiso.OrganisationName") o un operatore diverso (di default quello utilizzato è "PropertyIsEqualTo"). In caso di modifica della proprietà, dovrà essere aggiornata anche l'etichetta visualizzata nel form, definita nel file [```index.php```](index.php). Bisogna tenere presente, inoltre, che tale modifica impatta anche sul nome del file zip, output della trasformazione. 
