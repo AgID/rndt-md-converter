@@ -47,7 +47,9 @@ The repository includes all what is necessary for the installation and running o
   
 Pay special attention to the [```file/```](file) folder, that will be initially empty. To add the folder in the repository, the empty file .gitkeep was included in the folder; that file may be removed after the installation. This folder will hold the subfolders containing the results of the query. Be sure that everything inside this folder has the right read/write/execute permissions.  
 
-**NOTE** -  [```publiccode.yml```](publiccode.yml) is a metadata file required for the public software developed in Italy. It is included in the repository to enables the Developers Italia crawler to collect the information for feeding the [national open source software catalogue](https://developers.italia.it/it/software/).
+**NOTE 1** -  [```publiccode.yml```](publiccode.yml) is a metadata file required for the public software developed in Italy and it is not functional to the use of the converter. It is included in the repository to enables the Developers Italia crawler to collect the information for feeding the [national open source software catalogue](https://developers.italia.it/it/software/).
+
+**NOTE 2** - The [```images/```](images) folder contains the images used in the [```wiki```](https://github.com/AgID/rndt-md-converter/wiki) and it is not functional to the use of the converter.
 
 ### English description
 The description shown at the top in the converter homepage is in Italian. To show the English version of this description,  comment the Italian description and uncomment the English one in the ```$Description``` variable in the file [```function/config.properties```](function/config.properties). In a future release a wider use of label constants will be adopted.  
