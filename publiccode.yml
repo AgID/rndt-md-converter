@@ -57,7 +57,9 @@ description:
     screenshots:
       - >-
         https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/converter-homepage.png
-    logo: images/converter-header.png
+    logo:
+      - >-
+        https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/converter-header.png
     shortDescription: >-
       Tool per la trasformazione dei metadati di dati e servizi territoriali da
       un profilo ad un altro, basati entrambi sullo Standard ISO TS 19139.
