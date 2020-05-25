@@ -57,9 +57,6 @@ description:
     screenshots:
       - >-
         https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/converter-homepage.png
-    logo:
-      - >-
-        https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/converter-header.png
     shortDescription: >-
       Tool per la trasformazione dei metadati di dati e servizi territoriali da
       un profilo ad un altro, basati entrambi sullo Standard ISO TS 19139.
@@ -87,6 +84,8 @@ localisation:
     - it
     - en
   localisationReady: true
+  logo: >-
+  https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/rndt-md-converter.png
 maintenance:
   contractors:
     - name: RTI Fastweb - Leonardo - SIA (sub-contractor ESRI Italia)
