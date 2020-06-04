@@ -63,7 +63,7 @@ Viene reso disponibile anche uno [script XSLT per INSPIRE](inspire-xslt) per la 
 La descrizione che appare nella prima sezione presente nella pagina iniziale è in italiano. Per passare alla versione in inglese, nel file [```function/config.properties```](function/config.properties) commentare la descrizione in italiano e togliere i commenti dalla descrizione in inglese.  
   
 ## Trasformazione rispetto ad INSPIRE e ad altri profili di metadati
-Se si vuole utilizzare il converter per la trasformazione dei metadati sulla base delle Linee Guida INSPIRE (dalla v. 1.3 alla v. 2.0), senza considerare, quindi, le estensioni introdotte nel profilo nazionale italiano, si deve considerare lo script XSLT per INSPIRE copiandolo e incollandolo nella cartella [```function/```](function).
+Se si vuole utilizzare il converter per la trasformazione dei metadati sulla base delle Linee Guida INSPIRE (dalla v. 1.3 alla v. 2.0), senza considerare, quindi, le estensioni introdotte nel profilo nazionale italiano, si deve considerare lo [script XSLT per INSPIRE](inspire-xslt) copiandolo e incollandolo nella cartella [```function/```](function).
 
 Da tenere presente:
 - la trasformazione si riferisce solo a metadati in inglese;
