@@ -56,6 +56,9 @@ Da prestare particolare attenzione alla cartella [```file/```](file), che deve e
 
 **NOTA 2** - La cartella [```images/```](images) contiene le immagini per il [```wiki```](https://github.com/AgID/rndt-md-converter/wiki) e non è funzionale all'uso del converter.
 
+**NOTA 3** - Lo script XSLT di default presente nella cartella [```function/```](function) si basa sul profilo italiano dei metadati (RNDT).
+Viene reso disponibile anche uno [script XSLT per INSPIRE](inspire-xslt) per la trasformazione dei metadati rispetto alle Linee Guida di INSPIRE (v. "[Trasformazione rispetto ad INSPIRE e ad altri profili di metadati](https://github.com/AgID/rndt-md-converter/blob/master/README.md#trasformazione-rispetto-ad-inspire-e-ad-altri-profili-di-metadati)"). Si invitano coloro che riutilizzeranno la soluzione di testare tale script XSLT e fornire il proprio feedback attraverso lo [issue tracker](https://github.com/AgID/rndt-md-converter/issues) in modo da aggiornare e migliorare lo script.
+
 ### Descrizione in inglese
 La descrizione che appare nella prima sezione presente nella pagina iniziale è in italiano. Per passare alla versione in inglese, nel file [```function/config.properties```](function/config.properties) commentare la descrizione in italiano e togliere i commenti dalla descrizione in inglese.  
   
