@@ -92,18 +92,11 @@
    
     <!-- Aggiunta del namespace gmx e aggiunta dello schema se non esisteva  -->
 	<xsl:template name="Namespaces" match="gmd:MD_Metadata">
-		<xsl:copy>
-			<xsl:namespace name="gmx" select="'http://www.isotc211.org/2005/gmx'"/>
-			<xsl:choose>
-				<xsl:when  test="$hierarchyLevel = 'servizio'">
-					<xsl:attribute name="xsi:schemaLocation">http://www.isotc211.org/2005/srv https://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd</xsl:attribute>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:attribute name="xsi:schemaLocation">http://www.isotc211.org/2005/gmd https://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd</xsl:attribute>
-				</xsl:otherwise>
-			</xsl:choose>				
+		<gmd:MD_Metadata 
+			xmlns:gmx="http://www.isotc211.org/2005/gmx"
+			xsi:schemaLocation="http://www.isotc211.org/2005/gmd https://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd">
 			<xsl:apply-templates select="@* | node()" />
-		</xsl:copy>
+		</gmd:MD_Metadata>
 	</xsl:template>
     <!-- Sostituzione dello schema se già esisteva -->
 	<xsl:template match="@xsi:schemaLocation">
@@ -111,7 +104,8 @@
 				<xsl:when  test="$hierarchyLevel = 'servizio'">
 					<xsl:attribute name="{name()}">
 						<xsl:text>http://www.isotc211.org/2005/srv https://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd</xsl:text>
-					</xsl:attribute>				</xsl:when>
+					</xsl:attribute>
+				</xsl:when>
 				<xsl:otherwise>
 					<xsl:attribute name="{name()}">
 						<xsl:text>http://www.isotc211.org/2005/gmd https://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd</xsl:text>
@@ -711,41 +705,81 @@
       </xsl:if>
    </xsl:template>
    <xsl:template match="//gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:scope/gmd:DQ_Scope/gmd:levelDescription" />
-   <!-- Service category -->
-   <xsl:template match="//gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report">
-     <xsl:copy>
-         <xsl:apply-templates select="@* | node()" />
-      </xsl:copy>
+   <!-- Conformance-->
+   <!-- Viene specificata la conformità ai Regolamenti INSPIRE sostituendo quella già presente -->
+	<xsl:template match="//gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report[./gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title/*[contains(.,'REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE')]]">
+		<!-- Va indicata l'aderenza alla normativa -->
+		<xsl:comment>Viene specificata l'aderenza alle normative INSPIRE</xsl:comment>
 		<gmd:report>
 			<gmd:DQ_DomainConsistency>
-			   <gmd:result>
-				  <gmd:DQ_ConformanceResult>
+				<gmd:result>
+					<gmd:DQ_ConformanceResult>
 						<gmd:specification>
-						<gmd:CI_Citation>
-						   <gmd:title>
-							 <gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089">REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE del 23 novembre 2010 recante attuazione della direttiva 2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda l'interoperabilità dei set di dati territoriali e dei servizi di dati territoriali</gmx:Anchor>
-						   </gmd:title>
-						   <gmd:date>
-							  <gmd:CI_Date>
-								 <gmd:date>
-									<gco:Date>2010-12-08</gco:Date>
-								 </gmd:date>
-								 <gmd:dateType>
-									<gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
-								 </gmd:dateType>
-							  </gmd:CI_Date>
-						   </gmd:date>
-						</gmd:CI_Citation>
-					 </gmd:specification>
-					 <gmd:explanation>
-						<gco:CharacterString>Fare riferimento alle specifiche indicate</gco:CharacterString>
-					 </gmd:explanation>
-					 <gmd:pass gco:nilReason="unknown"/>
-				  </gmd:DQ_ConformanceResult>
-			   </gmd:result>
+							<gmd:CI_Citation>
+								<gmd:title>
+									<gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089">REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE del 23 novembre 2010 recante attuazione della direttiva 2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda l'interoperabilità dei set di dati territoriali e dei servizi di dati territoriali</gmx:Anchor>
+								</gmd:title>
+								<gmd:date>
+									<gmd:CI_Date>
+										<gmd:date>
+											<gco:Date>2010-12-08</gco:Date>
+										</gmd:date>
+										<gmd:dateType>
+											<gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+										</gmd:dateType>
+									</gmd:CI_Date>
+								</gmd:date>
+							</gmd:CI_Citation>
+						</gmd:specification>
+						<gmd:explanation>
+							<gco:CharacterString>Fare riferimento alle specifiche indicate</gco:CharacterString>
+						</gmd:explanation>
+						<gmd:pass gco:nilReason="unknown"/>
+					</gmd:DQ_ConformanceResult>
+				</gmd:result>
 			</gmd:DQ_DomainConsistency>
 		</gmd:report>	  
-
+	</xsl:template>
+	
+	<!-- Se la conformità non è specificata (nel caso di un servizio) va inserita. Si inserisce dopo l'ultimo nodo "report" -->
+	<xsl:template match="//gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report[not (./gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title/*[contains(.,'REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE')])][last()]">
+		<xsl:copy>
+			<xsl:apply-templates select="@* | node()" />
+		</xsl:copy>
+		<!-- Lo devo aggiungere solo se non c'era -->
+		<xsl:if test="count(//gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title/*[contains(.,'REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE')]) = 0">
+			<xsl:comment>Viene specificata l'aderenza alle normative INSPIRE</xsl:comment>
+			<gmd:report>
+				<gmd:DQ_DomainConsistency>
+					<gmd:result>
+						<gmd:DQ_ConformanceResult>
+							<gmd:specification>
+								<gmd:CI_Citation>
+									<gmd:title>
+										<gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089">REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE del 23 novembre 2010 recante attuazione della direttiva 2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda l'interoperabilità dei set di dati territoriali e dei servizi di dati territoriali</gmx:Anchor>
+									</gmd:title>
+									<gmd:date>
+										<gmd:CI_Date>
+											<gmd:date>
+												<gco:Date>2010-12-08</gco:Date>
+											</gmd:date>
+											<gmd:dateType>
+												<gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+											</gmd:dateType>
+										</gmd:CI_Date>
+									</gmd:date>
+								</gmd:CI_Citation>
+							</gmd:specification>
+							<gmd:explanation>
+								<gco:CharacterString>Fare riferimento alle specifiche indicate</gco:CharacterString>
+							</gmd:explanation>
+							<gmd:pass gco:nilReason="unknown"/>
+						</gmd:DQ_ConformanceResult>
+					</gmd:result>
+				</gmd:DQ_DomainConsistency>
+			</gmd:report>
+		</xsl:if>	  
+     <!-- Service category -->
       <!-- Se è un servizio e serviceType='other' si assume che sia 'invocable' -->
       <xsl:if test="$hierarchyLevel = 'servizio' and $serviceType = 'other'">
          <gmd:report>
