@@ -52,7 +52,7 @@ Pay special attention to the [```file/```](file) folder, that will be initially 
 **NOTE 2** - The [```images/```](images) folder contains the images used in the [```wiki```](https://github.com/AgID/rndt-md-converter/wiki) and it is not functional to the use of the converter.
 
 **NOTE 3** - The default XSLT script included in the [```function/```](function) folder is based on the Italian metadata profile.
-An [INSPIRE XSLT script](inspire-xslt) is also provided to transform metadata against INSPIRE TGs (see also "[Transformation against INSPIRE TGs or other metadata profiles](https://github.com/AgID/rndt-md-converter/blob/master/README-EN.md#transformation-against-inspire-tgs-or-other-metadata-profiles)"). The reusers are invited to test that XSLT script and provide any feedback via the [issue tracker](https://github.com/AgID/rndt-md-converter/issues) in order to update and improve it.
+An [INSPIRE XSLT script](inspire-xslt) is also provided to transform metadata against INSPIRE TGs (see also "[Transformation against INSPIRE TGs or other metadata profiles](https://github.com/AgID/rndt-md-converter/blob/master/README-EN.md#transformation-against-inspire-tgs-or-other-metadata-profiles)"). Reusers are invited to test that XSLT script and provide any feedback via the [issue tracker](https://github.com/AgID/rndt-md-converter/issues) in order to update and improve it.
 
 ### English description
 The description shown at the top in the converter homepage is in Italian. To show the English version of this description,  comment the Italian description and uncomment the English one in the ```$Description``` variable in the file [```function/config.properties```](function/config.properties). In a future release a wider use of label constants will be adopted.  
