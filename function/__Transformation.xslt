@@ -353,9 +353,19 @@
                <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
             </gmd:useConstraints>
             <gmd:otherConstraints>
+	     <xsl:choose>
+              <xsl:when test="contains(translate(gmd:MD_Constraints/gmd:useLimitation/gco:CharacterString, $uppercase, $lowercase),'nessuna condizione applicabile')">
+               <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply">Nessuna condizione applicabile</gmx:Anchor>
+              </xsl:when>
+              <xsl:when test="contains(translate(gmd:MD_Constraints/gmd:useLimitation/gco:CharacterString, $uppercase, $lowercase), 'condizioni sconosciute')">
+               <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/conditionsUnknown">Condizioni sconosciute</gmx:Anchor>
+              </xsl:when>
+              <xsl:otherwise>  
                <gco:CharacterString>
                   <xsl:value-of select="$useLimitation" />
                </gco:CharacterString>
+	      </xsl:otherwise>
+            </xsl:choose>  
             </gmd:otherConstraints>
          </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
