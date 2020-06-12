@@ -84,7 +84,7 @@ localisation:
     - it
     - en
   localisationReady: true
-  logo: >-
+logo: >-
   https://raw.githubusercontent.com/AgID/rndt-md-converter/master/images/rndt-md-converter.png
 maintenance:
   contractors:
