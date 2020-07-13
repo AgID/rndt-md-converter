@@ -25,7 +25,7 @@ The parameters to be used for the requests are included in the table below:
 The transformation output is a compressed folder (zip) including the following files:
 
 - _ReadMe.txt_: a text file with a brief description of the folder content;
-- _CSWResponseOLD.xml_: he CSW GetRecords response from the catalogue queried, based on the former metadata profile (such as 2011 Italian profile or  INSPIRE TG v.1.3);
+- _CSWResponseOLD.xml_: the CSW GetRecords response from the catalogue queried, based on the former metadata profile (such as 2011 Italian profile or  INSPIRE TG v.1.3);
 - _CSWResponseNEW.xml_: the CSW GetRecords response from the catalogue queried, based on the new metadata profile (such as 2020 Italian profile or INSPIRE TG v. 2.0), i.e. the response _CSWResponseOLD.xml_ transformed through the XSLT script;
 - _MetadataRecords.zip_: a compressed folder that includes the individual metadata records transformed.
 
