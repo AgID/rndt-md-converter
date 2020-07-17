@@ -114,6 +114,30 @@
 			</xsl:choose>
 		<xsl:apply-templates select="@* | node()" />
 	</xsl:template> 
+	
+	<!-- Codelist per lingua metadati e dati -->
+	<xsl:template match="//gmd:language">
+		<xsl:choose>
+			<xsl:when test="gmd:LanguageCode/@codeList='http://www.loc.gov/standards/iso639-2/' or gmd:LanguageCode/@codeList='http://www.loc.gov/standards/iso639-2'">
+		<xsl:copy>
+			<xsl:apply-templates select="@* | node()" />
+		</xsl:copy>
+		</xsl:when>
+		<xsl:otherwise>
+			<gmd:language>
+			<xsl:element name="gmd:LanguageCode">
+				<xsl:attribute name="codeList">
+					<xsl:text>http://www.loc.gov/standards/iso639-2/</xsl:text>
+				</xsl:attribute>
+				<xsl:attribute name="codeListValue">
+					<xsl:value-of select="gmd:LanguageCode/@codeListValue"/>
+				</xsl:attribute>
+				<xsl:value-of select="gmd:LanguageCode/text()"/>
+				</xsl:element>
+			</gmd:language>
+		</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template> 
    
    <!-- Character set -->
    <xsl:template match="//gmd:characterSet">
