@@ -644,7 +644,7 @@
                      <xsl:value-of select="'https://registry.geodati.gov.it/metadata-codelist/ProtocolValue/www-download'" />
                   </xsl:when>
                   <xsl:otherwise>
-                     <xsl:value-of select="'https://registry.geodati.gov.it/metadata-codelist/ProtocolValue/www-link'" />
+                     <xsl:value-of select="'http://www.w3.org/TR/xlink/'" />
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:variable>
