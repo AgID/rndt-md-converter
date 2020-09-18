@@ -1,5 +1,7 @@
 # RNDT metadata converter
 
+[![License: EUPL 1.2](https://img.shields.io/badge/License-EUPL&nbsp;1.2-blue.svg)](https://joinup.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_it.pdf)
+
 ## [>> Italiano](README.md)
 
 _RNDT metadata converter_ is a reusable solution that allows to query an [OGC CSW (Catalog Service for the Web)](https://www.ogc.org/standards/cat) and transform the metadata records returned, from a former metadata profile to another one revised, as long as both based on ISO Standard TS 19139.
