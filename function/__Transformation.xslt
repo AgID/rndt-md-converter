@@ -50,8 +50,8 @@
       <xsl:value-of select="//gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation" />
    </xsl:variable>
    <!-- serviceType -->
+   <xsl:variable name="appo" select="translate(//gmd:identificationInfo/srv:SV_ServiceIdentification/srv:serviceType/gco:LocalName/text(), $uppercase, $lowercase)"/>
    <xsl:variable name="serviceType">
-   	<xsl:variable name="appo" select="translate(//gmd:identificationInfo/srv:SV_ServiceIdentification/srv:serviceType/gco:LocalName/text(), $uppercase, $lowercase)"/>
    	<xsl:choose>
 			<xsl:when test="$appo = 'servizio di ricerca'">
 				<xsl:value-of select="'discovery'"/>
@@ -361,6 +361,17 @@
       <xsl:variable name="otherConstraints">
          <xsl:value-of select="//gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints/gco:CharacterString" />
       </xsl:variable>
+      	<xsl:if test="$otherConstraints != ''">
+	<gmd:resourceConstraints>
+		<gmd:MD_Constraints>
+			<gmd:useLimitation>
+				<gco:CharacterString>
+					<xsl:value-of select="$otherConstraints" />
+				</gco:CharacterString>
+			</gmd:useLimitation>
+		</gmd:MD_Constraints>
+	</gmd:resourceConstraints>
+	</xsl:if>
       <gmd:resourceConstraints>
          <gmd:MD_LegalConstraints>
             <gmd:accessConstraints>
@@ -484,16 +495,60 @@
                </gmx:Anchor>
             </gmd:code>
          </xsl:when>
-		 <xsl:when test="contains(translate(gco:CharacterString, $lowercase, $uppercase), 'WGS84')">
-            <xsl:comment>Il sistema di riferimento WGS84 non e' un CRS valido per INSPIRE</xsl:comment>
-            <gmd:code>
-               <gmx:Anchor xlink:href=""></gmx:Anchor>
-            </gmd:code>
-			</xsl:when>
+	 <xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'WGS84'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
+	<xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'ETRS89/ETRS-TM32'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/3044">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
+	<xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'ETRS89/ETRS-TM33'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/3045">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
+	<xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'WGS84/UTM 32N'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/32632">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
+	<xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'WGS84/UTM 33N'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/32633">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
+	<xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'WGS84/UTM 34N'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/32634">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
+	<xsl:when test="translate(gco:CharacterString, $lowercase, $uppercase) = 'MONTE MARIO / TM EMILIA-ROMAGNA'">
+		<gmd:code>
+			<gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/5659">
+				<xsl:value-of select="gco:CharacterString/text()" />
+			</gmx:Anchor>
+		</gmd:code>
+	</xsl:when>
          <xsl:otherwise>
-            <xsl:comment>Sistema di riferimento mancante o non riconosciuto</xsl:comment>
             <gmd:code>
-               <gmx:Anchor xlink:href=""></gmx:Anchor>
+               	<gco:CharacterString>
+			<xsl:value-of select="gco:CharacterString/text()" />
+		</gco:CharacterString>
             </gmd:code>
          </xsl:otherwise>
       </xsl:choose>
