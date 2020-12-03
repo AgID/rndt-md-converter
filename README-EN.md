@@ -6,7 +6,7 @@
 
 _RNDT metadata converter_ is a reusable solution that allows to query an [OGC CSW (Catalog Service for the Web)](https://www.ogc.org/standards/cat) and transform the metadata records returned, from a former metadata profile to another one revised, as long as both based on ISO Standard TS 19139.
 
-In Italy, from the 2011 Italian metadata profile (aligned and extending the INSPIRE metadata TG v. 1.3) to 2020 Italian metadata profile (aligned and extending the INSPIRE metadata TG v. 2.0).
+In Italy, from the 2011 Italian metadata profile (aligned with and extending the INSPIRE metadata TG v. 1.3) to 2020 Italian metadata profile (aligned with and extending the INSPIRE metadata TG v. 2.0).
 
 The solution can be used for a stricter transformation of metadata from [INSPIRE TG v.1.3](https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1) to [INSPIRE TG v.2.0](https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139) by using the [XSLT script for INSPIRE transformation](https://github.com/AgID/rndt-md-converter/tree/master/inspire-xslt). Also, the XSLT script can be adapted in order to transform metadata records against other (own) metadata profiles.
 
